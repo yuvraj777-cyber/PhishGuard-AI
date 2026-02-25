@@ -1,5 +1,5 @@
-# PhishGuard-AI
-Advanced URL Threat & Risk Detection System
+# PhishGuard AI
+**🚀 Real-Time Phishing Risk Detection Using Heuristics & AI-Ready Architecture**
 
 📌 Overview
 PhishGuard AI is a real-time phishing detection system that analyzes URLs using heuristic risk scoring and AI-inspired prediction models. It provides a dynamic threat score, graphical risk visualization, and detection logs for transparency.
