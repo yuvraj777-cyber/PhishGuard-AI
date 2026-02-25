@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard AI | Advanced Threat Detection</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <header>
+            <div class="logo-container">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <h1>PhishGuard <span class="highlight">AI</span></h1>
+            </div>
+            <p class="subtitle">Next-Gen URL Threat & Risk Analysis Engine</p>
+        </header>
+
+        <section class="search-section">
+            <div class="input-group">
+                <i class="fa-solid fa-link input-icon"></i>
+                <input type="text" id="urlInput" placeholder="Paste suspicious URL here (e.g., http://secure-login.com)...">
+                <button onclick="analyzeURL()" id="analyzeBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i> Analyze Risk
+                </button>
+            </div>
+        </section>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Scanning heuristics & pattern matching...</p>
+        </div>
+
+        <div class="result-container hidden" id="resultBox">
+            
+            <div class="dashboard-grid">
+                
+                <div class="card risk-card">
+                    <h3><i class="fa-solid fa-gauge-high"></i> Threat Level</h3>
+                    <div id="riskMeter" class="meter-container">
+                        <div class="gauge-body">
+                            <div class="gauge-fill"></div>
+                            <div class="gauge-cover"></div>
+                        </div>
+                        <span id="riskText" class="risk-label">---</span>
+                    </div>
+                </div>
+
+                <div class="card score-card">
+                    <h3><i class="fa-solid fa-calculator"></i> Analysis Data</h3>
+                    <div class="stat-row">
+                        <span class="stat-label">Safety Score</span>
+                        <span class="stat-value" id="score">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">AI Prediction</span>
+                        <span class="stat-value" id="mlResult">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reasons-card">
+                <h3><i class="fa-solid fa-list-check"></i> Detection Log</h3>
+                <ul id="reasons" class="reasons-list">
+                    </ul>
+            </div>
+
+            <div class="history-section">
+                <h4><i class="fa-solid fa-clock-rotate-left"></i> Recent Scans</h4>
+                <ul id="history" class="history-list"></ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by PhishGuard Neural Engine &copy; 2024</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
